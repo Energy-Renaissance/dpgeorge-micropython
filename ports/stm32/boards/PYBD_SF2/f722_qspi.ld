@@ -51,7 +51,6 @@ SECTIONS
         *lib/mynewt-nimble/*(.text* .rodata*)
         *lib/cyw43-driver/*(.rodata.w4343*_combined)
         *drivers/cyw43/*(.rodata.cyw43_btfw_*)
-        *frozen_content.o(.rodata.*)
         . = ALIGN(4);
     } >FLASH_EXT
 }
