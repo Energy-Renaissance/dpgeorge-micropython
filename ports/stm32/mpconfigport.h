@@ -199,6 +199,13 @@ extern const struct _mp_obj_type_t mp_network_cyw43_type;
 #define MICROPY_HW_NIC_CYW43
 #endif
 
+#if MICROPY_PY_NETWORK_PPP_LWIP
+extern const struct _mp_obj_type_t mp_network_ppp_lwip_type;
+#define MICROPY_HW_NIC_PPP                  { MP_ROM_QSTR(MP_QSTR_PPP), MP_ROM_PTR(&mp_network_ppp_lwip_type) },
+#else
+#define MICROPY_HW_NIC_PPP
+#endif
+
 #if MICROPY_PY_NETWORK_WIZNET5K
 extern const struct _mp_obj_type_t mod_network_nic_type_wiznet5k;
 #define MICROPY_HW_NIC_WIZNET5K             { MP_ROM_QSTR(MP_QSTR_WIZNET5K), MP_ROM_PTR(&mod_network_nic_type_wiznet5k) },
@@ -219,6 +226,7 @@ extern const struct _mp_obj_type_t mod_network_nic_type_wiznet5k;
 #define MICROPY_PORT_NETWORK_INTERFACES \
     MICROPY_HW_NIC_ETH  \
     MICROPY_HW_NIC_CYW43 \
+    MICROPY_HW_NIC_PPP \
     MICROPY_HW_NIC_WIZNET5K \
     MICROPY_BOARD_NETWORK_INTERFACES \
 
