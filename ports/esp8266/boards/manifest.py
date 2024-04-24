@@ -1,0 +1,8 @@
+freeze("$(PORT_DIR)/modules")
+require("dht")
+require("ds18x20")
+require("mip")
+require("neopixel")
+require("ntptime")
+require("onewire")
+require("webrepl")
